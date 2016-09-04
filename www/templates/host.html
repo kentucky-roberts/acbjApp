@@ -1,0 +1,70 @@
+<ion-view view-title="Create Event">
+    <ion-content>
+        <div class="list">
+          <label class="item item-divider">
+            NAME
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Name of your event" ng-model="eventData.title">
+          </label>
+
+          <label class="item item-input">
+            <input type="tel" placeholder="Phone" ng-model="eventData.phone">
+          </label>
+
+
+          <label class="item item-input">
+            <input type="text" placeholder="Start Time" type="time" ng-model="eventData.startTime">
+          </label>
+            <label class="item item-input">
+            <input type="text" placeholder="End Time" type="time" ng-model="eventData.endTime">
+          </label>
+            <label class="item item-input">
+            <input type="text" placeholder="RSVP By" type="date" ng-model="eventData.rsvpDate">
+          </label>
+
+          <label class="item item-divider">
+            LOCATION
+          </label>
+          <ion-item class="item-thumbnail-left item-icon-right" type="item-text-wrap" href="#/app/locations">
+            <i class="icon ion-chevron-right icon-accessory"></i>Select Location
+          </ion-item>
+
+
+          <label class="item item-divider">
+            CATEGORY
+          </label>
+          <ion-item class="item-thumbnail-left item-icon-right" type="item-text-wrap" href="#/app/categories">
+            <i class="icon ion-chevron-right icon-accessory"></i>Select a Category
+          </ion-item>
+
+
+          <label class="item item-divider">
+            Privicy Settings PRIVICY SETTINGS
+          </label>
+          <ul class="list">
+            <li class="item item-toggle">
+               Private Event
+               <label class="toggle toggle-assertive">
+                 <input type="checkbox" ng-model="eventData.privicy">
+                 <div class="track">
+                   <div class="handle"></div>
+                 </div>
+               </label>
+            </li>
+          </ul>
+
+          <label class="item item-divider">
+            DESCRIPTION
+          </label>
+          <label class="item item-input" ng-model="eventData.description">
+            <textarea placeholder="Description of your event"></textarea>
+          </label>
+
+          <label class="item">
+            <button class="button button-block button-balanced" type="submit">Create Event</button>
+          </label>
+
+    </div>
+  </ion-content>
+</ion-view>

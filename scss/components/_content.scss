@@ -1,0 +1,274 @@
+/*------------------------------------*
+    $CONTENT
+
+    The article on its article page,
+    the event on its event page.
+\*------------------------------------*/
+// these rules give padding to the content containers themselves.
+// Section tag lives on landing pages
+// .detail is set to Article tags for article page
+.detail {
+    padding-top: @vertical-rhythm;
+}
+// setup for landing pages
+.viewport--md section {
+    padding-top: @vertical-rhythm;
+}
+.content {
+  &:extend(.clearfix all);
+
+    padding-bottom: @vertical-rhythm;
+
+/*
+    > * + *,
+    .truncated-content > * + * {
+        margin-top: 1em;
+        margin-bottom: 0;
+    }
+*/
+    h4 {
+        // In the CMS editor, text can be marked as a 'header'
+        // This text is wrapped in an h4 by the viewscripts.
+        // TODO: Fold this style into page__meta or detail__meta or some other typographic standard.
+        // TODO: ems or px here?
+        font-family: @sans-serif;
+        font-weight: bold;
+        font-size: .875em;
+    }
+
+    blockquote {
+        margin-left: 0;
+        padding-left: 1.25em;
+
+        font-size: .875em;
+        color: @gray-dark;
+
+        border-left: @champagne solid 6px;
+        clear: left; /* To prevent blockquotes decorative border from overlapping. */
+    }
+}
+
+.content ol:extend(.ol all) {}
+.content ul:extend(.ul all) {}
+
+.detail__header {
+  .padding-bottom(@element__spacing);
+    border-bottom: @border-color solid 1px;
+}
+.detail__headline {
+    &:extend(.page__title all);
+}
+.detail__subhead {
+  &:extend(.page__subtitle all);
+
+    color: @gray-light;
+}
+
+.detail__meta {
+  &:extend(.page__meta all);
+
+  .margin-top(15px);
+}
+.t-detail__meta {
+    &:extend(.page__meta all);
+}
+.detail__meta-item {
+  display: inline-block;
+  padding-right: 2em;
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  color: @gray-light; // TODO: Unsure if this should be on .detail__meta or .page__meta instead
+
+    .viewport--xs-only &,
+    .viewport--sm-only & {
+        display: block;
+    padding-right: 0;
+    }
+
+
+}
+.detail__meta__byline {
+
+}
+.detail__meta__datetime {
+    + .detail__meta__datetime {
+        padding-left: 1em;
+    }
+}
+//.overline:extend(.breadcrumb) {}
+/*
+Only add underlines to links inside .content__segments.
+Consider this an MVP.
+Ideally, we'd have a .u-underline class that gets added to all desired links
+instead of relying on links being inside of .content__segment elements.
+*/
+.content__segment {
+    p&,
+    blockquote&,
+    ul&,
+    ol& {
+        a:not(.btn) {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+
+            .transition(~"color 100ms ease-out, border-color 100ms ease-out");
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            .ruby & {
+                border-color: fade(@link-color-ruby, 25%);
+
+                &:hover {
+                    border-color: fade(@link-color-ruby, 50%);
+                }
+            }
+            .sapphire & {
+                border-color: fade(@link-color-sapphire, 25%);
+
+                &:hover {
+                    border-color: fade(@link-color-sapphire, 50%);
+                }
+            }
+            .emerald & {
+                border-color: fade(@link-color-emerald, 25%);
+
+                &:hover {
+                    border-color: fade(@link-color-emerald, 50%);
+                }
+            }
+
+        }
+    }
+
+}
+
+
+.infinite-links-chunk {
+    margin-bottom: .7em;
+}
+
+// embedded content fixes
+// 1 tout videos don't really respond
+.tout-target-inner .tout-player-wrapper {
+    min-width:300px !important;
+    width:100% !important;
+    height: auto !important;
+}
+
+.correction {
+    font-size: .75em;
+
+    p:first-of-type {
+        margin-top: .5em;
+    }
+}
+
+.tools {
+    .clear-floats();
+    .padding-top(@element__spacing * 2);
+}
+.tool-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+        float: left;
+        margin: 0;
+        padding: 0;
+        .height(24px);
+        .line-height(24px);
+
+        .font-size(13px);
+    }
+}
+.tool-list--buttons {
+    margin-top: 1.5em;
+
+    li {
+        margin-right: .625em;
+        margin-bottom:.625em;
+        height: auto;
+        line-height:1;
+    }
+    .viewport--xs-only & .tool-list__hashtag + li {
+        clear: left;
+    }
+
+    [class*="icon"][class*="icon"] {
+        font-size: @btn__font-size;
+    }
+}
+.tool-item.tool-item {
+    margin: 0;
+    padding-right: 1em;
+
+    .font-size(13px);
+
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+.tool-item__text {
+    .font-size(13px);
+
+    a:hover &,
+    button:hover & {
+        text-decoration: underline;
+    }
+}
+
+.tool-item__link {
+    display: block;
+    float: left;
+
+    opacity: .8;
+
+    .tool-item__text {
+        color: @gray;
+    }
+
+    &:hover {
+        opacity: 1;
+        text-decoration: none;
+
+        .tool-item__text {
+            color: @gray;
+            text-decoration: none;
+        }
+
+    }
+}
+.tool-item__link--hover-button {
+    margin-right: -.25em;
+    margin-left: -.25em;
+    padding-right: .5em;
+    padding-left: .5em;
+
+    border: transparent solid 1px;
+    border-radius: 2px;
+
+    &:hover {
+        border-color: lighten(@gray-light, 20%);
+    }
+}
+.generate-social-tool-item(@name; @color) {
+    .tool-item--@{name} .tool-item__link--hover-button:hover {
+        border-color: lighten(@color, 33%);
+    }
+}
+
+.generate-social-tool-item(facebook, @facebook-brand-color);
+.generate-social-tool-item(linkedin, @linkedin-brand-color);
+.generate-social-tool-item(twitter, @twitter-brand-color);
+.generate-social-tool-item(googleplus, @googleplus-brand-color);
+.generate-social-tool-item(email, @email-color);
+.generate-social-tool-item(print, @gray);
+.generate-social-tool-item(docs, @gray);
+.generate-social-tool-item(star, @gray);

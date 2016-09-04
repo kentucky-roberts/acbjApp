@@ -1,0 +1,574 @@
+/*------------------------------------*
+    $BUTTONS
+\*------------------------------------*/
+.btn {
+    &:focus {
+        .tab-focus();
+    }
+    &.no-focus,
+    &.no-focus:active,
+    &.no-focus:focus {
+        outline: none;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none;
+        .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+        pointer-events: none; // Future-proof disabling of clicks
+        .opacity(.65);
+        .box-shadow(none);
+    }
+}
+
+
+
+
+
+/*------------------------------------*
+    BUTTONS
+\*------------------------------------*/
+@btn-spacing: 10px;
+.btn {
+    display: inline-block;
+    .font-size(@btn__font-size);
+    line-height: 1.2;
+    padding: .5em .8em .4em;
+    margin-bottom: 0; // For input.btn
+
+    vertical-align: middle;
+    white-space: nowrap;
+
+    font-family: @btn__font-family;
+    font-weight: @btn__font-weight;
+    text-align: center;
+
+    cursor: pointer;
+
+    border-width: 1px;
+    border-style: solid;
+    border-radius: @btn__border-radius;
+
+    .transition(~"color 100ms ease-out, background 100ms ease-out, border 100ms ease-out");
+    // Syntax note: the ~"" escapes the contents of the string. Without this, the comma between shadows caused errors.
+    //.box-shadow(@btn__box-shadow);
+    /*
+    .transition(~"background 2s ease-in-out");
+    .transition(~"border 2s ease-in-out");
+    */
+
+    & + .btn {
+        .margin-left(@btn-spacing);
+    }
+
+    &:focus {
+        .tab-focus();
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none;
+        .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+        pointer-events: none; // Future-proof disabling of clicks
+        .opacity(.65);
+        .box-shadow(none);
+    }
+
+}
+
+.btn--block {
+    display: block;
+    width: 100%;
+}
+
+.btn--wide {
+    padding-right: 3em;
+    padding-left: 3em;
+}
+.reverse-buttons,
+.viewport--md .reverse-buttons\@md,
+.viewport--lg .reverse-buttons\@lg {
+    .clear-floats();
+
+    .btn {
+        float: right;
+        margin-left: 0;
+    }
+    .btn + .btn {
+        .margin-right(@btn-spacing);
+    }
+}
+
+
+/*------------------------------------*
+    $SIZES
+\*------------------------------------*/
+// Large
+.btn--large {
+    .font-size(@btn--large__font-size);
+}
+
+// Small
+.btn--small {
+    .font-size(@btn--small__font-size);
+}
+
+// Mini
+.btn--xsmall {
+    .font-size(@btn--xsmall__font-size);
+}
+
+
+
+
+
+/*------------------------------------*
+    $VARIANTS
+\*------------------------------------*/
+// Default
+
+.btn {
+  color: @btn__text-color;
+  .text-shadow-inset(@btn__text-color);
+  .btn-pseudo-states(@btn__text-color, @btn__background-color, @btn__border-color, @btn__is-flat, @btn__background-color--hover);
+}
+
+.btn {
+    background-color: @white;
+
+    // Faking the pseudo states, don't have time to make the mixin aware of transparency and whatnot
+    // TODO: Get these back into a generator!
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: @white;
+    }
+
+    .ruby & {
+        color: @ruby;
+        border-color: @ruby;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: @white;
+            background: @ruby;
+        }
+        &.disabled,
+        &[disabled],
+        fieldset[disabled] & {
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                cursor: not-allowed;
+                border-color: @gray-lighter;
+                color: @gray-lighter;
+            }
+        }
+    }
+    .sapphire & {
+        color: @sapphire;
+        border-color: @sapphire;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: @white;
+            background: @sapphire;
+        }
+        &.disabled,
+        &[disabled],
+        fieldset[disabled] & {
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                cursor: not-allowed;
+                border-color: @gray-lighter;
+                color: @gray-lighter;
+            }
+        }
+
+    }
+    .emerald & {
+        color: @emerald;
+        border-color: @emerald;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: @white;
+            background: @emerald;
+        }
+        &.disabled,
+        &[disabled],
+        fieldset[disabled] & {
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                cursor: not-allowed;
+                border-color: @gray-lighter;
+                color: @gray-lighter;
+            }
+        }
+    }
+}
+
+.btn--subtle {
+    background-color: @white;
+
+    // Faking the pseudo states, don't have time to make the mixin aware of transparency and whatnot
+    // TODO: Get these back into a generator!
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: @white;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            cursor: not-allowed;
+            border-color: @gray-lighter;
+            color: @gray-lighter;
+        }
+    }
+
+    .ruby & {
+        color: @ruby;
+        border-color: fade(@ruby, 25%);
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: @white;
+            background: @ruby;
+        }
+        &.disabled,
+        &[disabled],
+        fieldset[disabled] & {
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                cursor: not-allowed;
+                border-color: @gray-lighter;
+                color: @gray-lighter;
+            }
+        }
+    }
+    .sapphire & {
+        color: @sapphire;
+        border-color: fade(@sapphire, 25%);
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: @white;
+            background: @sapphire;
+        }
+        &.disabled,
+        &[disabled],
+        fieldset[disabled] & {
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                cursor: not-allowed;
+                border-color: @gray-lighter;
+                color: @gray-lighter;
+            }
+        }
+    }
+    .emerald & {
+        color: @emerald;
+        border-color: fade(@emerald, 25%);
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: @white;
+            background: @emerald;
+        }
+        &.disabled,
+        &[disabled],
+        fieldset[disabled] & {
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                cursor: not-allowed;
+                border-color: @gray-lighter;
+                color: @gray-lighter;
+            }
+        }
+    }
+
+    &.disabled.disabled,
+    &[disabled][disabled],
+    fieldset[disabled][disabled] & {
+        cursor: not-allowed;
+        color: fade(@gray-lighter, 85%);
+        border-color: fade(@gray-lighter, 25%);
+    }
+}
+.sapphire .btn--primary {
+    color: @white;
+    .text-shadow-inset(@white);
+    .btn-pseudo-states(@white, @sapphire, darken(@sapphire, 5%), @btn__is-flat, darken(@sapphire, 5%), darken(@sapphire, 5%), @gray-lighter, @gray-lighter);
+}
+.ruby .btn--primary {
+    color: @white;
+    .text-shadow-inset(@white);
+    .btn-pseudo-states(@white, @ruby, darken(@ruby, 5%), @btn__is-flat, darken(@ruby, 5%), darken(@ruby, 5%), @gray-lighter, @gray-lighter);
+}
+.emerald .btn--primary {
+    color: @white;
+    .text-shadow-inset(@white);
+    .btn-pseudo-states(@white, @emerald, darken(@emerald, 5%), @btn__is-flat, darken(@emerald, 5%), darken(@emerald, 5%), @gray-lighter, @gray-lighter);
+}
+/*
+.btn--secondary {
+    color: @btn--secondary__text-color;
+    .text-shadow-inset(@btn--secondary__text-color);
+    .btn-pseudo-states(@btn--secondary__background-color, @btn--secondary__border-color, @btn__is-flat, darken(@btn--secondary__background-color, 5%));
+}
+*/
+
+.btn--link.btn--link {
+    border-color: transparent;
+    background-color: transparent;
+
+    padding-right: 0;
+    padding-left: 0;
+
+
+    // Syntax note: the ~"" escapes the contents of the string. Without this, the comma between shadows caused errors.
+    .box-shadow(none);
+
+    // Faking the pseudo states, don't have time to make the mixin aware of transparency and whatnot
+
+    .ruby &,
+    .sapphire &,
+    .emerald & {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            text-decoration: underline;
+
+            border-color: transparent;
+            background-color: transparent;
+        }
+    }
+
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            cursor: not-allowed;
+            border-color: transparent;
+            background-color: transparent;
+        }
+    }
+
+    .ruby & {
+        color: @link-color-ruby;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: @link-color-ruby;
+        }
+    }
+    .sapphire & {
+        color: @link-color-sapphire;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: @link-color-sapphire;
+        }
+    }
+    .emerald & {
+        color: @link-color-emerald;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: @link-color-emerald;
+        }
+    }
+    &.disabled.disabled,
+    &[disabled][disabled],
+    fieldset[disabled][disabled] & {
+        cursor: not-allowed;
+        color: fade(@gray-lighter, 85%);
+        border-color: transparent;
+        background-color: transparent;
+    }
+}
+
+.btn--inverted.btn--inverted {
+    color: @white;
+    border-color: fade(@white, 25%);
+    background-color: @black;
+    background-color: transparent;
+
+    // Faking the pseudo states, don't have time to make the mixin aware of transparency and whatnot
+    // TODO: Get these back into a generator!
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: @white;
+        border-color: @white;
+        background-color: transparent;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            cursor: not-allowed;
+            border-color: fade(@white, 10%);
+            background-color: transparent;
+        }
+    }
+}
+/*------------------------------------*
+    $TRANSPARENT BUTTONS
+
+    .btn--overlay:
+    Typically use an embedded icon, like the search submit button in the header
+    Don't inherit any styles from .btn
+\*------------------------------------*/
+.btn--overlay {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -.75em; // Really don't think this will hold up over time?
+    color: @gray;
+    border: none;
+    background: transparent;
+
+    &:hover {
+        .ruby & {
+            color: @link-color-ruby;
+        }
+        .sapphire & {
+            color: @link-color-sapphire;
+        }
+        .emerald & {
+            color: @link-color-emerald;
+        }
+    }
+}
+
+.btn--outlined {
+    background-color: #000;
+    background-color: transparent;
+}
+
+.btn--inverted {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: #000;
+  background-color: transparent;
+}
+
+/*
+    $SOCIAL BUTTONS
+
+*/
+.btn--social {
+    padding-left: .6em;
+    padding-right: .6em;
+
+    [class*="icon"][class*="icon"] {
+        color: @white;
+    }
+}
+.btn--email.btn--email {
+    color: @white;
+    .text-shadow-inset(@white);
+    .btn-pseudo-states(@white, fade(@email-color, 80%), transparent, @btn__is-flat, @email-color, transparent);
+}
+.btn--twitter.btn--twitter {
+    color: @white;
+    .text-shadow-inset(@white);
+    .btn-pseudo-states(@white, fade(@twitter-brand-color, 80%), transparent, @btn__is-flat, @twitter-brand-color, transparent);
+}
+.btn--linkedin.btn--linkedin {
+    color: @white;
+    .text-shadow-inset(@white);
+    .btn-pseudo-states(@white, fade(@linkedin-brand-color, 80%), transparent, @btn__is-flat, @linkedin-brand-color, transparent);
+}
+.btn--facebook.btn--facebook {
+    color: @white;
+    .text-shadow-inset(@white);
+    .btn-pseudo-states(@white, fade(@facebook-brand-color, 80%), transparent, @btn__is-flat, @facebook-brand-color, transparent);
+}
+.btn--googleplus.btn--googleplus {
+    color: @white;
+    .text-shadow-inset(@white);
+    .btn-pseudo-states(@white, fade(@googleplus-brand-color, 80%), transparent, @btn__is-flat, @googleplus-brand-color, transparent);
+}
+
+/*
+    $Branded Products Buttons
+*/
+.btn--newsleads.btn--newsleads {
+    color: @white;
+    .text-shadow-inset(@white);
+    .btn-pseudo-states(@white, fade(@newsleads-brand-color, 80%), transparent, @btn__is-flat, @newsleads-brand-color, transparent);
+}

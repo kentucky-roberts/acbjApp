@@ -1,0 +1,106 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="{{bar}}">
+
+      <ion-nav-back-button class="button-icon icon ion-chevron-left">
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-positive">
+      <img src="img/logos/{{data.marketList}}-logo.png" class="top-bar-logo">
+    </ion-header-bar>
+    <ion-content>
+
+      <ion-list>
+        <div class="list list-inset">
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search" ng-model="query">
+          </label>
+        </div>
+        <label class="item item-divider">
+          DATA
+        </label>
+        <ion-item menu-close href="#/app/datacenter">
+          Datacenter
+        </ion-item>
+        <ion-item menu-close href="#/app/events">
+          Events
+        </ion-item>
+        <ion-item menu-close href="#/app/host">
+          Host
+        </ion-item>
+        <ion-item menu-close href="#/app/chats">
+          Chat
+        </ion-item>
+        <ion-item menu-close href="#/UserMessages" class="">
+          Chat v2
+        </ion-item>
+        <ion-item menu-close href="#/app/tickets" class="">
+          Tickets
+        </ion-item>
+        <ion-item menu-close href="#/app/news">
+          News
+        </ion-item>
+        <ion-item menu-close href="#/app/browse">
+          Browse
+        </ion-item>
+        <label class="item item-divider">
+          ACCOUNT
+        </label>
+        <ion-item menu-close ng-click="showLogin()">
+          Login
+        </ion-item>
+        <ion-item menu-close href="#/app/settings">
+          Settings
+        </ion-item>
+
+        <label class=" item item-divider">
+          MARKET {{data.marketList}}
+        </label>
+        <ion-radio ng-repeat="item in marketList"
+                   ng-value="item.value"
+                   class=""
+                   ng-model="data.marketList">
+          {{ item.text }}
+        </ion-radio>
+
+
+        <label class=" item item-divider" class="">
+          DEV LINKS
+        </label>
+        <ion-item nav-clear menu-close href="#/app/filter-bar" class="">
+            Filter Bar
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/content-banner" class="">
+            Content Banner
+        </ion-item>
+
+        <ion-item nav-clear menu-close href="#/app/camera" class="  ">
+            Camera
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/device" class="">
+            Device
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/notifications" class="">
+            Notifications
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/share" class="">
+            Social Sharing
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/sqlite" class="">
+            SQLite
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

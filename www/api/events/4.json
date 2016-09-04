@@ -1,0 +1,15 @@
+{
+    "id": 4,
+    "title": "CFO of the Year Awards",
+    "url_title": "cfo-of-the-year",
+    "image": "http://placehold.it/80x80",
+    "description": "Join us as we celebrate the 2016 CFO of the Year Honorees and applaud their many accomplishments and contributions to the regions economy and community!",
+    "price": 15,
+    "qty": 500,
+    "date": 4,
+    "images": [
+      "http://placehold.it/500x500",
+      "http://placehold.it/500x500",
+      "http://placehold.it/500x500"
+    ]
+  }

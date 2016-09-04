@@ -1,0 +1,110 @@
+/*------------------------------------*
+    $TABS
+\*------------------------------------*/
+.js .tabs__content {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+.tabs__control-list {
+    &:extend(.page__meta);
+
+    margin: 1em 0 0 0;
+    padding: 0 0 1px;
+    list-style-type: none;
+}
+.tabs__control {
+    display: inline-block;
+    margin: 0 .75em 2px 0;
+    padding: 0;
+
+    text-transform: uppercase;
+
+    // Added .tabs__control__link and '>' to allow for dropdowns triggers.
+    // Old tabs should still work because of the '>' but should be updated to .tabs__control__link
+    > a,
+    .tabs__control__link {
+        display: block;
+        width: auto;
+        margin: 0;
+        padding: .33em 0;
+        color: $gray-darker;
+
+        border-bottom: transparent solid 2px;
+
+        .branded(@text: true);
+
+        &:hover {
+            text-decoration: none;
+            //border-bottom-color: @gray-darker;
+            .ruby & { border-bottom-color: @ruby; }
+            .sapphire & { border-bottom-color: @sapphire; }
+            .emerald & { border-bottom-color: @emerald; }
+        }
+
+        &:focus {
+            outline: none; // Is this an accessibility issue?
+        }
+    }
+
+    &.active {
+        > a,
+        .tabs__control__link {
+            color: @gray-darker;
+            cursor: default;
+
+            border-bottom-color: @gray-darker;
+
+            &:hover {
+                border-bottom-color: @gray-darker;
+            }
+            /*
+            .ruby &,
+            .ruby &:hover {
+                color: @ruby;
+                border-bottom-color: @ruby;
+            }
+            .sapphire &,
+            .sapphire &:hover {
+                color: @sapphire;
+                border-bottom-color: @sapphire;
+            }
+            .emerald &,
+            .emerald &:hover {
+                color: @emerald;
+                border-bottom-color: @emerald;
+            }
+
+            &:hover {
+
+
+            }
+            */
+        }
+    }
+}
+
+.tabs__control-list--in-section-header.tabs__control-list--in-section-header {
+    margin-bottom: -1px;
+
+    .tabs__control {
+        .font-size(15px);
+        font-weight: bold;
+        text-transform: none;
+
+        margin-right: 0;
+        padding-right: 1em;
+
+        .viewport--sm & {
+            .font-size(16px);
+        }
+        .viewport--lg & {
+            .font-size(17px);
+        }
+        .viewport--xl & {
+            .font-size(18px);
+        }
+    }
+}

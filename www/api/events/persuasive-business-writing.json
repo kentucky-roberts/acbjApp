@@ -1,0 +1,14 @@
+{
+    "id": 2,
+    "title": "Persuasive Business Writing",
+    "url_title": "persuasive-business-writing",
+    "image": "http://placehold.it/80x80",
+    "description": "Practical techniques for clear and persuasive business writing.",
+    "price": 200,
+    "qty": 44,
+    "images": [
+      "http://placehold.it/500x500",
+      "http://placehold.it/500x500",
+      "http://placehold.it/500x500"
+    ]
+  }

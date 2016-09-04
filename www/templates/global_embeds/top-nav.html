@@ -1,0 +1,105 @@
+<div class="bar bar-header bar-light">
+    <a href="#" class="logo-link">
+        <img src="img/logos/saffire-logo.svg"  alt="logo">
+    </a>
+  <h1 class="title">Title</h1>
+</div>
+
+
+<header class="header">
+    <div class="market-header">
+        <div class="menubar">
+            <ul class="menubar-list">
+                <li class="menubar-item menubar-item--has-button menubar__menu-toggle hidden--print">
+                    <button class="no-focus menubar-item__btn drawer__toggle menu-button" data-ct="Nav Home" data-drawer-direction="left">
+                        <span class="menubar-item__text hidden--xs hidden--sm" data-drawer-toggle-html="<strong style='font-size: 2.5em;'>&times;</strong>">
+                            <strong>Menu</strong>
+                        </span>
+                        <span class="hamburger hidden--md hidden--lg hidden--xl">
+                            <span class="hamburger__bar"></span>
+                            <span class="hamburger__bar"></span>
+                            <span class="hamburger__bar"></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="menubar-item menubar-item--fit-width menubar-item--has-logo">
+                    <a href="#" class="logo-link">
+                        <img src="img/logos/saffire-logo.svg"  alt="logo">
+                    </a>
+                </li>
+                <li class="menubar-item menubar-item--promo relative menubar-item--auto-width hidden--print" data-ct="APT: Subscribe Now header">
+                    <div class="mboxDefault">
+
+                        <a href="#" class="menubar__promo-link hidden--xs hidden--sm">
+                            <strong>Subscribe Now</strong><em>Get News Alerts In Your Inbox</em>
+                        </a>
+
+                        <a href="#" class="menubar__promo-link hidden--xs hidden--sm"
+                            <strong>Subscribe Now</strong> <em>Limited Time Offer</em>
+                        </a>
+
+                  </div>
+
+                </li>
+                <li class="menubar-item hidden--print">
+                    <div class="menubar__search js-init">
+                        <a href="#" class="search__trigger no-focus menubar-item__btn hidden--lg hidden--xl" style="border-right: #eee solid 1px; border-left: #eee solid 1px;">
+                            <span >
+                                <i class="icon-search"></i>
+                            </span>
+                        </a>
+                        <form id="search" class="menubar__search-form" name="search" action="" method="get">
+                            <input name="q" type="text" placeholder="Search" class="form-item__control menubar__search__form-item__control no-focus">
+                            <!--<button class="no-focus menubar-item__btn menubar__search__close-btn"><i class="icon-cancel"></i></button>-->
+                            <button class="no-focus menubar-item__btn menubar__search__submit-btn" type="submit">
+                                <i class="icon-search"></i>
+                            </button>
+                        </form>
+
+                    </div>
+                </li>
+                <li class="menubar-item hidden--print menubar-item--profile hidden--no-js">
+<?php /* Non-logged-in state */ ?>
+                    <a href="#" class="no-focus menubar-item__btn menubar-item--loggedout js-login" style="width: auto;">
+                        <span class="hidden--md hidden--lg hidden--xl"><i class="icon-user"></i></span>
+                        <span class="menubar-item__text hidden--xs hidden--sm"><strong>Sign In</strong></span>
+                    </a>
+<?php /* Logged-in state */ ?>
+                    <div class="hidden dropdown js-init display-none menubar-item--loggedin" >
+                        <button class="dropdown__trigger no-focus menubar-item__btn" style="width: auto;">
+                            <span class="hidden--md hidden--lg hidden--xl">
+                                <i class="icon-user"></i>
+                            </span>
+                            <span class="menubar-item__text hidden--xs hidden--sm">
+                                <strong><i class="icon-attention renewal-badge"></i> My Profile <i class="icon-down-dir"></i></strong>
+                            </span>
+                        </button>
+                        <div class="dropdown__target dropdown__target--padded dropdown__target--right">
+                            <!-- Renewal Poke is injected here -->
+                            <div class="menu-container">
+                                <h2 class="menu-header"></h2>
+                                <ul class="menu menu--submenu">
+                                    <li>
+                                        <a href="#" class="menu-item submenu-item">My Account</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-item submenu-item">Subscriptions</a>
+                                    </li>
+                                    <!-- if portal notifications -->
+
+                                    <li>
+                                        <a href="" class="menu-item submenu-item">Custom Notifications</a>
+                                    </li>
+
+                                    <li class="submenu--logout">
+                                        <a href="" class="menu-item submenu-item js-logout">Sign Out</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

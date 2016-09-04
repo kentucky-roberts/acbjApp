@@ -1,0 +1,31 @@
+4/*------------------------------------*
+    $BREADCRUMBS
+\*------------------------------------*/
+.breadcrumbs :extend(.page__meta all) {
+   // .clearfix();
+}
+.breadcrumb,
+.breadcrumb-divider,
+.breadcrumb--active {
+    display: block;
+    float: left;
+    padding-right: .25em;
+    text-transform: uppercase;
+}
+.breadcrumb {
+    font-weight: bold;
+}
+.breadcrumb--active {
+    color: @gray-light;
+}
+.breadcrumb-divider {
+    color: @gray-lighter;
+}
+.breadcrumbs { // TODO: This is a hack on at least two fronts. 1: Nesting. 2: Current HTML has .meta-item not inside a breadcrumb, but next to.
+    .breadcrumb + .meta-item {
+        margin-left: 1.25em;
+    }
+}
+
+
+

@@ -1,0 +1,49 @@
+/*------------------------------------*
+   $section-navigationS
+   Can have links in a list for site section
+   Should have priority plus applied to it
+\*------------------------------------*/
+$section-navigation-divider-height: 1em;
+$section-navigation-divider-spacing: 1.5em;
+.section-navigation {
+   display: table;
+   margin: 0;
+   padding: 0;
+   list-style-type: none;
+   font-size: 13px;
+   .viewport--md & {
+       font-size: 14px;
+   }
+   .viewport--lg & {
+       font-size: 15px;
+   }
+}
+.section-navigation__item {
+   display: table-cell;
+
+   &:not(:first-child):not(.priority-plus__whitespace) {
+       padding-left: &section-navigation-divider-spacing;
+       padding-left: "calc(@{section-navigation-divider-spacing} + 1px)";
+   }
+}
+.section-navigation__link {
+   display: block;
+   position: relative;
+   width: auto;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   line-height: 1;
+   .section-navigation__item:not(:first-child):not(.priority-plus__whitespace) &:before {
+       content: " ";
+       display: block;
+       position: absolute;
+       width: 1px;
+       height: $section-navigation-divider-height;
+       top: 50%;
+       margin-top: -($section-navigation-divider-height/2);
+       left: -$section-navigation-divider-spacing;
+       left: "calc(-@{section-navigation-divider-spacing}/2 - 1px)";
+
+       background: darken($border-color, 15%);
+   }
+}

@@ -1,0 +1,109 @@
+[{
+    "channel_id": "1",
+    "channel_name": "Banking & Financial Services",
+    "is_active": true,
+    "channel_code": "banking-and-financial-services",
+    "iana": null
+}, {
+    "channel_id": "6",
+    "channel_name": "Career & Workplace",
+    "is_active": true,
+    "channel_code": "career-and-workplace",
+    "iana": null
+}, {
+    "channel_id": "2",
+    "channel_name": "Commercial Real Estate",
+    "is_active": true,
+    "channel_code": "commercial-real-estate",
+    "iana": null
+}, {
+    "channel_id": "3",
+    "channel_name": "Education",
+    "is_active": true,
+    "channel_code": "education",
+    "iana": null
+}, {
+    "channel_id": "4",
+    "channel_name": "Energy",
+    "is_active": true,
+    "channel_code": "energy",
+    "iana": null
+}, {
+    "channel_id": "13",
+    "channel_name": "Food & Lifestyle",
+    "is_active": true,
+    "channel_code": "food-and-lifestyle",
+    "iana": null
+}, {
+    "channel_id": "17",
+    "channel_name": "Government & Regulations",
+    "is_active": true,
+    "channel_code": "government-and-regulations",
+    "iana": null
+}, {
+    "channel_id": "5",
+    "channel_name": "Health Care",
+    "is_active": true,
+    "channel_code": "health-care",
+    "iana": null
+}, {
+    "channel_id": "9",
+    "channel_name": "Manufacturing",
+    "is_active": true,
+    "channel_code": "manufacturing",
+    "iana": null
+}, {
+    "channel_id": "10",
+    "channel_name": "Media & Marketing",
+    "is_active": true,
+    "channel_code": "media-and-marketing",
+    "iana": null
+}, {
+    "channel_id": "18",
+    "channel_name": "Philanthropy & Nonprofits",
+    "is_active": true,
+    "channel_code": "philanthropy-and-nonprofits",
+    "iana": null
+}, {
+    "channel_id": "7",
+    "channel_name": "Professional Services",
+    "is_active": true,
+    "channel_code": "professional-services",
+    "iana": null
+}, {
+    "channel_id": "11",
+    "channel_name": "Residential Real Estate",
+    "is_active": true,
+    "channel_code": "residential-real-estate",
+    "iana": null
+}, {
+    "channel_id": "12",
+    "channel_name": "Retailing",
+    "is_active": true,
+    "channel_code": "retailing",
+    "iana": null
+}, {
+    "channel_id": "14",
+    "channel_name": "Sports Business",
+    "is_active": true,
+    "channel_code": "sports",
+    "iana": null
+}, {
+    "channel_id": "15",
+    "channel_name": "Technology",
+    "is_active": true,
+    "channel_code": "technology",
+    "iana": null
+}, {
+    "channel_id": "8",
+    "channel_name": "Transportation",
+    "is_active": true,
+    "channel_code": "transportation",
+    "iana": null
+}, {
+    "channel_id": "16",
+    "channel_name": "Travel & Tourism",
+    "is_active": true,
+    "channel_code": "travel-and-tourism",
+    "iana": null
+}]

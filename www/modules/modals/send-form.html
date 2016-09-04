@@ -1,0 +1,25 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Send</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form class="send-form">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Title</span>
+          <input type="text" ng-model="sendItem.title">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Summary</span>
+          <input type="text" ng-model="sendItem.summary">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit" ng-click="submitSendForm();closeModal();">Send</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

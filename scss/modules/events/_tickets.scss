@@ -1,0 +1,53 @@
+.ticket-type {
+    padding-top: 2.667em;
+    padding-bottom: 1.333em;
+    border-bottom: $border-color solid 2px;
+}
+
+.ticket-type--disabled {
+    opacity: .25;
+}
+.ticket-type__header {
+    // .clearfix();
+}
+.ticket-type__body {
+    padding-top: 1em;
+}
+.ticket-type__title,
+.ticket-type__price {
+    font-family: $sans-serif;
+   font-size: 18px;
+    text-align: center;
+
+    .viewport--md & {
+        font-size: 24px;
+    }
+}
+.ticket-type__title {
+    position: relative;
+    font-weight: bold;
+
+    .viewport--md & {
+        text-align: left;
+        padding-right: 120px;
+    }
+}
+.ticket-type__price {
+    font-weight: normal;
+    display: block;
+
+    .viewport--md & {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        width: auto;
+        text-align: right;
+    }
+}
+.ticket-type__description {
+    margin-top: 0;
+
+    .viewport--md & {
+        margin-bottom: 0;
+    }
+}

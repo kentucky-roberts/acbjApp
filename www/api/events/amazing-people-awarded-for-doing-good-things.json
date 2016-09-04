@@ -1,0 +1,15 @@
+ {
+    "id": 6,
+    "title": "Amazing People Awarded for Doing Good Things",
+    "url_title": "amazing-people-awarded-for-doing-good-things",
+    "image": "http://placehold.it/80x80",
+    "description": "Great people doing great things and being awarded for it.  This event will be life-changing, and you should buy a ticket because there are only three left!",
+    "price": 15,
+    "qty": 100,
+    "date": 6,
+    "images": [
+      "http://placehold.it/500x500",
+      "http://placehold.it/500x500",
+      "http://placehold.it/500x500"
+    ]
+  }

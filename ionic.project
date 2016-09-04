@@ -1,0 +1,12 @@
+{
+  "name": "acbjApp",
+  "app_id": "22734a82",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

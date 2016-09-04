@@ -1,0 +1,38 @@
+ngCardova plugins
+
+
+Action Sheet
+AdMob
+App Version
+Badge
+BarcodeScanner
+Calendar
+Contacts
+Camera
+Device
+Date Picker
+Email Composer
+Google Analytics
+Touch ID
+Inapp Browser
+iBeacon
+    iBeacon uses Bluetooth low energy proximity sensing to transmit a universally unique identifier picked up by a compatible app or operating system. The identifier can be used to determine the device's physical location or trigger a location-based action on the device such as a check-in on social media or a local / push notification. Wikipedia
+
+todo...
+  Facebook
+  http://ngcordova.com/docs/plugins/facebook/
+  cordova plugin add https://github.com/Wizcorp/phonegap-facebook-plugin.git --variable APP_ID="123456789" --variable APP_NAME="myApplication"
+
+Preferences
+SMS
+Local Notification
+Geolocation
+Background Geolocation
+Social Sharing
+OAuth
+Splash Screen
+Printer
+File Transfer
+SQLite
+
+

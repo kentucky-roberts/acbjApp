@@ -1,0 +1,314 @@
+/*------------------------------------*
+    $META ELEMENTS
+
+    Typically positioned above headlines
+
+    <div class="meta">
+        <a class="meta-item" href="/path/to/whatever/">Meta Item Link</a>
+        <span class="meta-item">Meta Item Text</span>
+
+    </div>
+
+    Half the desired bottom margin goes on .meta-item in case the line wraps.
+    The other half of the desired bottom margin goes on .meta
+
+    .meta-items that are also links get the brand color.
+\*------------------------------------*/
+.meta {
+//    margin-bottom: .125em;
+  line-height: 0;
+
+}
+.meta-item {
+  display: inline-block;
+  vertical-align: top;
+
+    margin-right: 1em;
+//    margin-bottom: .125em;
+//    padding-top: .375em;
+//    padding-bottom: .375em;
+//    padding-top: .25em;
+//    padding-bottom: .25em;
+
+    font-family: $sans-serif;
+    .font-size(12px);
+    line-height: 1;
+    font-weight: $meta-item__font-weight;
+    text-transform: uppercase;
+
+    color: $meta-item__font-color;
+
+//  .ruby & { color: $ruby; }
+//    .sapphire & { color: $sapphire; }
+//    .emerald & { color: $emerald; }
+
+    .meta & {
+        // Let .meta-items not inside a .meta display inline, not-floated.
+        display: inline-block;
+        width: auto;
+    }
+
+    a& {
+        .branded($text: true);
+    }
+
+
+    // Size Modifiers
+    &.meta-item--small {
+        .font-size(10px);
+        padding-top: .25em;
+        padding-bottom: .25em;
+    }
+    &.meta-item--large {
+        .font-size(14px);
+    }
+    &.meta-item--xlarge {
+        .font-size(16px);
+    }
+
+
+    // Display Modifiers
+
+    /*
+    &.meta-item--badge {
+        padding-top: .325em;
+        padding-bottom: .325em;
+        margin-top: 0;
+        font-weight: bold;
+        color: $white;
+
+        .ruby & {
+            background: $ruby;
+        }
+        .sapphire & {
+            background: $sapphire;
+        }
+        .emerald & {
+            background: $emerald;
+        }
+    }
+    */
+
+    &.meta-item--plain-text {
+        // Not a fan of this pattern :-(
+        .font-size(12px); // Visually matches the uppercase at 11px
+        font-weight: normal; // Always normal, so strong tag can be used inside
+        text-transform: none;
+    }
+
+    &.meta-item--inline {
+        display: inline;
+        float: none;
+    }
+
+    // if a meta-item is alone or last remove the margin on the right
+    // &:first-child:last-child {
+    //     margin-right: 0;
+    // }
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+
+.meta-item--sponsored,
+ a .meta-item--sponsored {
+  color: $gray-light;
+}
+
+.meta-item--uppercase {
+    text-transform: uppercase;
+}
+
+.meta-item--tag,
+a.meta-item--tag {
+    padding: .325em .625em;
+
+  font-weight: normal;
+    color: $meta-item--tag__font-color;
+
+    border-radius: $meta-item--tag__border-radius;
+    //background: $meta-item--tag__background-color;
+
+    /*
+    &.meta-item--small {
+        padding: 3px 5px;
+    }
+
+    &.meta-item--large {
+
+    }
+    &.meta-item--xlarge {
+        padding: .5em .75em;
+    }
+    */
+
+    .branded($background: true);
+
+    &.meta-item--sponsored.meta-item--sponsored {
+        color: $white;
+        background: $gray-lighter;
+    }
+}
+a.meta-item--tag {
+    .ruby &,
+    .sapphire &,
+    .emerald & {
+        color: $white;
+    }
+}
+.meta-item--overlay {
+  position: absolute;
+    display: block;
+    float: left;
+    width: auto;
+    margin: 0;
+    padding-right: 5px;
+    padding-left: 5px;
+    white-space: nowrap;
+
+    line-height: 1;
+  font-weight: normal;
+    color: $white;
+
+  strong {
+    font-weight: normal; // Gross.
+  }
+
+    .ruby & {
+    color: $white;
+        background-color: $ruby;
+    }
+    .sapphire & {
+    color: $white;
+        background-color: $sapphire;
+    }
+    .emerald & {
+    color: $white;
+        background-color: $emerald;
+    }
+
+    .viewport--md & {
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+
+    .ruby a&,
+    .sapphire a&,
+    .emerald a& {
+        color: $white;
+    }
+
+  &.meta-item--sponsored {
+    background-color: $gray-light;
+  }
+}
+.meta-item--overlay--small {
+  .font-size(10px);
+    padding: 3px 5px 2px;
+}
+// This is currently used when the meta-item is between item__media and item__body,
+// and needs to display at the bottom of the media.
+.meta-item--overlay--bottom {
+  bottom: 100%;
+  left: 0; // What the heck. Let's make bottom also equal left for right now.
+}
+/*
+.generate-responsive-meta-items ($viewport-list; $index: 1) when (isstring(extract($viewport-list, $index))) {
+  $size-name: extract($viewport-list, $index);
+  // --overlay
+  .viewport--${size-name} .${size-name}__meta-item--overlay,
+  .viewport--${size-name}-only .${size-name}-only__meta-item--overlay {
+    &:extend(.meta-item--overlay all);
+
+    .ruby& {
+      color: $white;
+      background: $ruby;
+    }
+    .sapphire& {
+      color: $white;
+      background: $sapphire;
+    }
+    .emerald& {
+      color: $white;
+      background: $emerald;
+    }
+  }
+
+  // --overlay--bottom
+  .viewport--${size-name} .${size-name}__meta-item--overlay--bottom,
+  .viewport--${size-name}-only .${size-name}-only__meta-item--overlay--bottom {
+    &:extend(.meta-item--overlay--bottom all);
+  }
+
+  // --small
+  .viewport--${size-name} .${size-name}__meta-item--small,
+  .viewport--${size-name}-only .${size-name}-only__meta-item--small {
+    &:extend(.meta-item--small all);
+  }
+
+  // --overlay--small
+  .viewport--${size-name} .${size-name}__meta-item--overlay--small,
+  .viewport--${size-name}-only .${size-name}-only__meta-item--overlay--small {
+    &:extend(.meta-item--overlay--small all);
+  }
+
+  .generate-responsive-meta-items($viewport-list, ($index + 1));
+}
+.generate-responsive-meta-items($default-viewports);
+*/
+
+
+dl.meta-list {
+  dt, dd {
+    &:extend(.meta-item all);
+  }
+  dt {
+    margin-right: 0;
+    color: $gray-dark;
+    font-weight: bold;
+    letter-spacing: .5px;
+
+    header & {
+        font-weight: normal;
+        padding-right: .5em;
+    }
+  }
+
+  dd {
+    margin: 0;
+    padding: 0;
+
+    &:before {
+      content: "\25AA";
+      padding: 0 .5em 0 .25em;
+      color: $gray-lighter;
+
+      header & {
+            content: "";
+        }
+    }
+
+    header & {
+        text-transform: capitalize;
+
+        &:before {
+            display: none;
+        }
+    }
+  }
+
+  dt + dd {
+    &:before {
+      content: "";
+    }
+  }
+}
+
+.meta.meta-item span.meta-item--button-link {
+    color: $ruby;
+    font-family: $font-family;
+    font-size: 12px;
+    color: $ruby;
+
+}

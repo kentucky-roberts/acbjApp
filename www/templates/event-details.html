@@ -1,0 +1,81 @@
+<ion-view view-title="Event Details">
+  <ion-content>
+
+
+
+
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <img ng-src="{{event.image}}">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <h1 class="module__title--fancy--large {{marketColor}}">{{event.title}} </h1>
+                    </div>
+
+                    <span class="desc"><strong><i class="ion-ios-clock-outline"></i></strong></span>
+                    <span class="desc">Thu Feb 04 @ 7:30 PM</span>
+                    <span class="desc"><strong>Remaining Tickets:</strong> {{event.qty}}</span>
+                    <span class="desc"><strong>Price:</strong> ${{event.price}}</span>
+                       <p class="lead">
+                        {{event.lead}}
+                      </p>
+                </div>
+                <div class="bottom">
+
+                  <div class="title">
+                    <button class="button button-positive button-large" ng-click="showPurchaseForm();">Buy Now</button>
+                  </div>
+
+                </div>
+
+        </div>
+
+
+    <p>
+      {{event.description}}
+    </p>
+    <p>
+      Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+
+
+
+
+      <div class="row">
+        <div class="phone-images">
+          <img ng-src="{{img}}"
+            class="phone"
+            ng-repeat="img in news.photos track by $index">
+        </div>
+      </div>
+      <div class="row">
+        <ul class="phone-thumbs">
+          <li ng-repeat="img in news.photos track by $index">
+            <img ng-src="{{img}}">
+          </li>
+        </ul>
+      </div>
+
+
+
+
+
+  </ion-content>
+
+
+    <div class="bar bar-footer">
+      <button class="button button-clear" ng-click="showSaveForm();">Save</button>
+
+      <div class="title">
+        <button class="button button-clear" ng-click="showPurchaseForm();">Purchase</button>
+      </div>
+
+      <button class="button button-clear" ng-click="showSendForm();">Share</button>
+    </div>
+
+</ion-view>

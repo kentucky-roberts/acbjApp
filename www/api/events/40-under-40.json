@@ -1,0 +1,14 @@
+  {
+    "id": 1,
+    "title": "40 Under 40",
+    "url_title": "40-under-40",
+    "image": "http://placehold.it/80x80",
+    "description": "Seattle is becoming the worlds largest cloud community. Join us to hear from local experts about harnessing the Cloud for dramatic business growth.",
+    "price": 99,
+    "qty": 100,
+    "images": [
+      "http://placehold.it/500x500",
+      "http://placehold.it/500x500",
+      "http://placehold.it/500x500"
+    ]
+  }

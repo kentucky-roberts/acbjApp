@@ -1,0 +1,284 @@
+/*------------------------------------*
+    $ITEM
+\*------------------------------------*/
+
+.item {
+  //.clear-floats();
+
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  a
+  &:hover {
+    text-decoration: none;
+
+    //background: fade($champagne, 50%);
+
+    /*
+    &:after {
+      .branded-border-state();
+    }
+    */
+  }
+}
+.item + .item,
+.item + .items-container,
+.items-container + .item,
+.item + .item-container {
+  border-top: $border-color solid 1px;
+}
+
+.items-container {
+  padding-top: $item-vertical-padding;
+  padding-bottom: $item-vertical-padding;
+}
+
+// This is a special case for native items because they need to have a container with the negative margin to wrap the GPT call.
+.item-container--native {
+    margin-left: -3px;
+    margin-right: -3px;
+
+    .gpt > *:first-child,
+    .gpt [id*="google_ads_iframe"] {
+        display: block !important;
+    }
+}
+
+.item__media,
+.item__body {
+  position: relative;
+}
+
+.item__media {}
+
+.item__body {
+    padding-top: $item-vertical-padding;
+    padding-bottom: $item-vertical-padding;
+}
+
+// .item__body--overlay {
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     padding: $item-vertical-padding;
+// }
+
+.item__media ~ .item__body {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    &.item__body--overlay {
+        padding: $item-vertical-padding;
+    }
+}
+
+// wrapper classes for featured items layout - I don't like where this is going... Talk about it
+// .item--featured {}
+// .item--featured-primary {}
+// .item--featured-secondary {}
+
+.item--sponsored {
+  margin-top: -$item-container-adjustment;
+  margin-right: -$item-container-adjustment;
+  margin-left: -$item-container-adjustment;
+  margin-bottom: -1px; // Hides any border from an item beneath it. TODO: Should this use a sibling selector on the next item?
+
+  padding-top: $item-container-adjustment;
+  padding-right: $item-container-adjustment;
+  padding-left: $item-container-adjustment;
+
+  background: #f4f4f4;
+
+  .item__body {
+    // These match the meta-item's overlay padding. TODO: Actually tie these together.
+    //padding-right: 5px;
+    //padding-left: 5px;
+  }
+}
+// This is the same thing as .item--sponsored except with it being inside the GPT calll
+.item--native {
+    margin-top: -$item-container-adjustment;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: -1px; // Hides any border from an item beneath it. TODO: Should this use a sibling selector on the next item?
+
+    padding-top: $item-container-adjustment;
+    padding-right: $item-container-adjustment;
+    padding-left: $item-container-adjustment;
+
+    background: #f4f4f4;
+}
+
+.item--flag {
+  display: table;
+  width: 100%;
+  padding-top: $item-vertical-padding;
+  padding-bottom: $item-vertical-padding;
+
+  .item__media,
+  .item__body {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .item__media {
+    width: $flag__media-width;
+    min-width: $flag__media-min-width;
+    padding-right: ($flag__gutter-width / 2);
+  }
+    .item__media--large {
+      width: 22.46%;
+    }
+  .item__body {
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: ($flag__gutter-width / 2);
+  }
+    .item__body--middle {
+        vertical-align: middle;
+    }
+  .item__media + .item__body {
+    //padding-right: 0;
+    padding-left: ($flag__gutter-width / 2);
+  }
+  .item__body + .item__media {
+    padding-right: 0;
+    padding-left: ($flag__gutter-width / 2);
+  }
+
+    // not to keen on how this generator works. builds super specificity
+    &.item--flag--small {
+        .item__media {
+            min-width: $flag__media--small-min-width;
+        }
+    }
+}
+// .item__media img:extend(.img--block) {}
+
+/* -------------------------------------------
+item__tile style
+    item__tiles are a pattern that yield a container,
+    the item__tile, and objects inside. typically the
+    objects will be an image with txt overlay.
+
+Sections that use this currently
+    Pulse specific items
+---------------------------------------------- */
+// vars
+$item__tile-index: 1;
+$item__tile-index--iterator: $item__tile-index + 1;
+
+.item__tile {
+
+    // creates a dom object that allows block level styling
+    &:before {
+        opacity: 1;
+        // .transition(opacity 100ms ease-out);
+
+        // .u-position-absolute;
+        // .u-position-top;
+        // .u-position-right;
+        // .u-position-bottom;
+        // .u-position-left;
+        z-index: $item__tile-index;
+        content: ' ';
+        display: block;
+
+        // set this via the brand color? black default?
+        background-color: rgba(0, 0, 0, 0.7);
+        background-image: -webkit-linear-gradient(top, fade($gray-darker, 10%) 0%, fade($gray-darker, 30%) 60%, fade($gray-darker, 70%) 100%);
+        background-image: -moz-linear-gradient(top, fade($gray-darker, 10%) 0%, fade($gray-darker, 30%) 60%, fade($gray-darker, 70%) 100%);
+        background-image: -o-linear-gradient(top, fade($gray-darker, 10%) 0%, fade($gray-darker, 30%) 60%, fade($gray-darker, 70%) 100%);
+        background-image: -ms-linear-gradient(top, fade($gray-darker, 10%) 0%, fade($gray-darker, 30%) 60%, fade($gray-darker, 70%) 100%);
+        background-image: linear-gradient(top, fade($gray-darker, 10%) 0%, fade($gray-darker, 30%) 60%, fade($gray-darker, 70%) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#ff000000', GradientType=0);
+        background-color: transparent;
+    }
+
+    *, a, .item__title, .item__title a { color: #fff; } // try and se this on a color var that will understand the bg and go high contrast to it.
+
+    [class*="__body"] {
+        position: absolute;
+        z-index: $item__tile-index--iterator;
+        padding: $item-vertical-padding;
+
+        [class*="__title"] {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, .7);
+        }
+    }
+
+    &:hover {
+        &:before {
+            opacity: .7;
+            //.transition(opacity 100ms ease-out);
+
+            background-color: rgba(0, 0, 0, 0.4);
+            background-image: -webkit-linear-gradient(top, fade($gray-darker, 5%) 0%, fade($gray-darker, 25%) 70%, fade($gray-darker, 65%) 100%);
+            background-image: -moz-linear-gradient(top, $gray-darker 0%, $gray-darker 90%, $gray-darker 100%);
+            background-image: -o-linear-gradient(top, $gray-darker 0%, $gray-darker 90%, $gray-darker 100%);
+            background-image: -ms-linear-gradient(top, $gray-darker 0%, $gray-darker 90%, $gray-darker 100%);
+            background-image: linear-gradient(top, $gray-darker 0%, $gray-darker 90%, $gray-darker 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#ff000000', GradientType=0);
+            background-color: transparent;
+        }
+
+        .sapphire &,
+        .ruby &,
+        .emerald & {
+            *, a, .item__title, .item__title a { color: #fff; }
+        }
+    }
+}
+
+.item__title--locked {
+  color: $gray-lighter!important;
+  margin-bottom: 0.2em;
+
+  i.icon-locked {
+    color: $gray-lighter;
+    margin-left: 0;
+  }
+
+  strong.locked--view {
+    background: $gray-lighter!important;
+    color: $gray-lighter!important;
+  }
+
+  strong.unlocked--view {
+    background: transparent;
+    color: $gray-lighter;
+  }
+}
+
+.meta-item--locked {
+  color: $gray-lighter!important;
+}
+
+// sets default bg color when a car is used and no image is available
+// .module[data-section-title="item__tile"]  {
+//     .viewport--xs &,
+//     .viewport--sm & {
+//         padding-top: 20px;
+//     }
+//
+//     .viewport--md & {
+//         padding-top: 0;
+//     }
+//
+//     .item__media {
+//         .ruby & {
+//             background-color: $ruby;
+//         }
+//
+//         .sapphire & {
+//             background-color: $sapphire;
+//         }
+//
+//         .emerald & {
+//             background-color: $emerald;
+//         }
+//     }
+// }
+

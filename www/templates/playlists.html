@@ -1,0 +1,14 @@
+<ion-view view-title="Events">
+  <ion-content>
+
+    <div class="list">
+        <a class="item item-thumbnail-left" ng-repeat="event in events" href="#/app/playlists/{{event.id}}">
+          <img src="{{event.image}}">
+          <h2>{{event.title}}</h2>
+          <p>{{event.description}}</p>
+        </a>
+    </div>
+  </ion-content>
+
+</ion-view>
+

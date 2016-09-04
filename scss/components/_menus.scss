@@ -1,0 +1,193 @@
+/*------------------------------------*
+    $MENUS
+\*------------------------------------*/
+
+.menu-container {
+    margin-top: $menu-container-top-margin;
+  margin-right: -$menu-horizontal-padding;
+  margin-left: -$menu-horizontal-padding;
+
+  * + & {
+        margin-top: ($menu-container-top-margin * 2);
+    }
+}
+
+.menu.menu.menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.menu-item {
+    display: block;
+    position: relative;
+    padding: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    line-height: 1;
+    text-decoration: none;
+    color: $gray-darker;
+
+    a& {
+        color: $gray-darker;
+    }
+
+    &:hover,
+    a&:hover {
+        color: $gray-darker;
+        text-decoration: none;
+    }
+
+    &.is-active,
+    a&.is-active {
+        background: $white;
+    }
+
+    [class*="icon-"]:first-child {
+        margin-right: .33em;
+    }
+}
+.menu__divider.menu__divider {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 1px;
+    background: $border-color;
+}
+// TODO: Consider attaching a class to the menu/submenu instead of relying on viewport--md
+.viewport--xs-only,
+.viewport--sm-only {
+    .menu-item__icon:before {
+
+    }
+
+    &.csstransforms3d.csstransitions .menu-item.is-active .menu-item__icon:before {
+
+    }
+}
+.viewport--md {
+    .menu-item.is-active,
+    a.menu-item.is-active {
+        color: $white;
+        text-decoration: none;
+
+        .ruby& { background: $ruby; }
+        .sapphire& { background: $sapphire; }
+        .emerald& { background: $emerald; }
+    }
+
+    .has-submenu {
+        .menu-item.is-active,
+        a.menu-item.is-active {
+            &:after {
+                $triangle-width: 6px;
+                $triangle-height: 12px;
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: ($z-submenus + 1);
+                top: 50%;
+                right: 0;
+                width: 0;
+                height: 0;
+                margin-top: ($triangle-height / 2);
+                border-style: solid;
+                border-width: ($triangle-height / 2) $triangle-width ($triangle-height / 2) 0;
+                border-color: transparent $white transparent transparent;
+            }
+        }
+
+        > .menu-item {
+            cursor: default;
+        }
+    }
+
+
+
+}
+.menu-header,
+h2.menu-header {
+    margin: 0;
+    padding: 11px $menu-horizontal-padding;
+    font-family: $sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: $gray-light;
+}
+.menu-footer {
+    padding-right: $menu-horizontal-padding;
+    padding-left: $menu-horizontal-padding;
+}
+
+
+
+
+
+/*------------------------------------*
+    $SUBMENUS
+\*------------------------------------*/
+.submenu-container {
+    display: none;
+
+    padding-top: 8px;
+    padding-bottom: 16px;
+
+    background: $white;
+
+    &.is-active,
+    .is-active & {
+        display: block;
+    }
+
+    .viewport--md & {
+        position: fixed;
+        z-index: $z-submenus;
+        top: $menubar-height;
+        left: $off-canvas__width;
+        width: $off-canvas__width;
+        padding-top: 16px;
+
+        overflow-y: scroll;
+
+
+
+
+    }
+
+}
+.menu--submenu {
+    //padding: 4px;
+}
+.submenu-item,
+a.submenu-item {
+    text-transform: none;
+
+    .viewport--xs-only &,
+    .viewport--sm-only & {
+
+    }
+
+    &:hover {
+        //color: $white;
+        text-decoration: none;
+
+        background: $champagne-light;
+
+        .ruby & { color: $ruby; }
+        .sapphire & { color: $sapphire; }
+        .emerald & { color: $emerald; }
+    }
+}
+
+
+
+
+

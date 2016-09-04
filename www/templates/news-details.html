@@ -1,0 +1,73 @@
+<ion-view view-title="News Details">
+  <ion-content>
+
+
+
+
+            <div class="card hovercard">
+                <div class="cardheaderNews">
+
+                </div>
+                <div class="avatar">
+                    <img ng-src="{{news.image}}">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <h1 class="module__title--fancy--large {{marketColor}}">{{news.title}} </h1>
+                    </div>
+
+
+                       <p class="lead">
+                        {{news.lead}}
+                      </p>
+                </div>
+                <div class="bottom">
+
+
+                </div>
+
+        </div>
+
+
+    <p>
+      {{news.description}}
+    </p>
+    <p>
+
+      Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+
+  <div class="row">
+    <div class="phone-images">
+      <img ng-src="{{img}}"
+        class="phone"
+        ng-repeat="img in news.photos track by $index">
+    </div>
+  </div>
+  <div class="row">
+    <ul class="phone-thumbs">
+      <li ng-repeat="img in news.photos track by $index">
+        <img ng-src="{{img}}">
+      </li>
+    </ul>
+  </div>
+
+
+
+  </ion-content>
+
+    <div class="bar bar-footer">
+      <button class="hidden button button-clear" ng-click="showSaveForm();">Save</button>
+
+      <div class="title">
+        <button class="hidden button button-clear" ng-click="showPurchaseForm();">Purchase</button>
+      </div>
+
+      <button class="hidden button button-clear" ng-click="showSendForm();">Share</button>
+    </div>
+
+</ion-view>
+
+
+

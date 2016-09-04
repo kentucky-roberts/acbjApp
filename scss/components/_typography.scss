@@ -1,0 +1,639 @@
+html {
+    font-size: 62.5%;
+    //font-size: 56.25%;
+  //font-size: 50%;
+    /*
+    &.viewport--lg {
+        font-size: 62.5%;
+    }
+    */
+}
+body {
+    font-family: $font-family;
+    font-size: 18px;
+    line-height: $line-height--default;
+    color: $text-color;
+}
+a {
+    text-decoration: none; // Hmmmm
+    &:hover {
+        text-decoration: underline;
+    }
+    .ruby & {
+        color: $ruby;
+
+        &:hover {
+            color: darken($ruby, 5%);
+        }
+//
+        // &.link-color--unset {
+        //     color: $text-color;
+        // }
+    }
+    .sapphire & {
+        color: $sapphire;
+
+        &:hover {
+            color: darken($sapphire, 5%);
+        }
+//
+        // &.link-color--unset {
+        //     color: $text-color;
+        // }
+    }
+    .emerald & {
+        color: $emerald;
+
+        &:hover {
+            color: darken($emerald, 5%);
+        }
+//
+        // &.link-color--unset {
+        //     color: $text-color;
+        // }
+    }
+}
+hr {
+
+  border: none;
+  border-top: $border-color solid 1px;
+
+  &:first-child {
+    // Feels like a dangerous assumption to make
+    margin-top: 0;
+  }
+
+  &.dotted {
+      border-top-style: dotted;
+  }
+}
+.bolder {
+    font-weight: bolder;
+}
+
+.text--secondary,
+.text--supplementary {
+    font-size: 16px;
+
+}
+
+.text--subtle {
+    color: $gray-light;
+}
+.text--upper {
+    text-transform: uppercase;
+}
+.content {
+   font-size: 16px;
+
+
+
+    font-family: $serif;
+    -webkit-font-feature-settings: "liga";
+    webkit-font-feature-settings: "liga";
+}
+h1, h2, h3, h4, h5, h6,
+.alpha, .beta, .gamma, .delta, .epsilon, .zeta {
+    font-family: $serif;
+    margin: 0;
+}
+
+h1, .alpha {
+
+  /*
+    //.font-size($alpha-font-size);
+
+    //font-size: 1.5em;
+  font-size: 1.777em; // 26px, perfect fourth scale
+
+    line-height: 1.1;
+    letter-spacing: -.5px;
+
+    margin-bottom: .125em;
+
+    .viewport--sm & {
+        //font-size: 1.75em;
+    }
+
+    .viewport--md & {
+        //font-size: 2em;
+    font-size: 2.368em; // 43px, perfect fourth scale.
+    }
+
+    .viewport--lg & {
+        //font-size: 2.222em;
+    //font-size: 2.368em; // 43px, perfect fourth scale.
+    }
+  */
+}
+h2, .beta {
+  //&:extend(.module__title all);
+  margin-top: 1em;
+}
+h3, .gamma {
+
+
+}
+h4, .delta {
+    //.font-size($delta-font-size);
+}
+h5, .epsilon {
+    //.font-size($epsilon-font-size);
+}
+h6, .zeta {
+    //.font-size($zeta-font-size);
+}
+
+
+/*
+.page__ declarations use ems because their proportion is more important than precision?
+.module__ declarations use rems
+.item__ declarations use rems
+*/
+.page__title {
+  //font-family: $serif;
+  //font-size: 1.777em; // 28px, perfect fourth scale
+  font-size: 1.625em;
+  line-height: 1.1;
+  padding-top: 15px;
+  padding-bottom: 0;
+
+  &:only-child {
+      padding-bottom: .5em; //
+  }
+
+    .viewport--sm & {
+    }
+
+    .viewport--md & {
+    font-size: 2.368em; // 43px, perfect fourth scale.
+    }
+
+    .viewport--lg & {
+    }
+}
+.page__title--small {
+  font-size: 26px;
+
+  .viewport--md & {
+    font-size: 26px; // 43px, perfect fourth scale.
+    }
+}
+.page__subtitle {
+  font-family: $serif;
+  font-size: 1.333em; // 19px, perfect fourth scale
+    font-weight: normal;
+
+    line-height: 1.2;
+    letter-spacing: -.5px;
+paddding-top: 15px;
+  padding-bottom: 0;
+
+    .viewport--sm & {
+    }
+
+    .viewport--md & {
+    }
+
+    .viewport--lg & {
+    }
+}
+.page__text {
+  font-family: $serif;
+}
+.module__title {
+  margin: 0;
+    padding: 0;
+
+    font-family: $sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1;
+
+    a, a:link, a:hover, a:visited, a:active, a:focus { color: $text-color; }
+}
+.module__title--small {
+    font-size: 13px;
+}
+.module__title--fancy {
+    margin-top:40px;
+    font-family: $serif;
+    font-weight: bold; // TODO: 800 for ExtraBold when we have it.
+    font-style: italic;
+    font-size: 20px;
+    text-transform: none;
+
+
+
+    &.module__title--large {
+        margin-top: 0;
+          font-size: 28px;
+    }
+}
+.page__meta {
+  font-family: $sans-serif;
+  font-size: 13px;
+
+
+
+}
+.item__title {
+  padding-top: .333em;
+
+  font-family: $serif;
+  //font-size: 1.1667em;
+  //font-size: 1em;
+ font-size: 18px;
+  font-weight: normal;
+  line-height: 1.2;
+    //letter-spacing: -.5px;
+
+  a &,
+  &a,
+  a {
+    color: $gray-darker;
+  }
+
+  a:hover &,
+  &a:hover,
+  a:hover {
+    .ruby & {
+      color: $ruby;
+    }
+    .sapphire & {
+      color: $sapphire;
+    }
+    .emerald & {
+      color: $emerald;
+    }
+  }
+}
+.item__title--large {
+
+    font-weight: bold;
+}
+.item__title--small {
+  font-family: $sans-serif;
+  //font-size: .75em;
+  //font-size: .8333em;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+.item__title--smaller {
+    font-family: $sans-serif;
+    //font-size: .75em;
+    //font-size: .8333em;
+    font-size: 13px;
+    line-height: 1.25;
+}
+
+/*
+.item__title--xsmall {
+  font-family: $sans-serif;
+  //font-size: .75em;
+  .font-size(14px);
+  font-weight: bold;
+}
+
+.item__title--xxsmall {
+
+}
+*/
+
+.item__teaser {
+    padding-top: .333em;
+
+    font-family: $serif;
+    font-size: 15px;
+    line-height: 1.333;
+
+    a &,
+    &a,
+    a {
+        color: $gray;
+    }
+
+    a:hover &,
+    &a:hover,
+    a:hover {
+        .ruby & {
+            color: $gray;
+        }
+        .sapphire & {
+            color: $gray;
+        }
+        .emerald & {
+            color: $gray;
+        }
+    }
+}
+
+.item__subhead {
+    margin-top: .333em;
+
+    font-family: $sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.2;
+    color: $gray;
+    text-transform: none;
+}
+.item__subhead--small {
+   font-size: 11px;
+}
+
+.item--featured {
+    .viewport--md & {
+        .item__title {
+           font-size: 24px;
+        }
+        .item__title--smaller {
+            font-size: 13px;
+        }
+        .item__title--larger {
+            padding-top: 0;
+        }
+        .item__teaser{
+           font-size: 16px;
+        }
+
+        .ul {
+            //margin-top: .25em;
+            margin-bottom: 0;
+        }
+        .ul li + li {
+            margin-top: 0;
+        }
+    }
+    .viewport--lg & {
+        .item__title--larger {
+            font-size: 36px;
+        }
+        &.item--featured--full-width {
+            .item__title--smaller {
+                font-size: 14px;
+            }
+            .item__teaser{
+                font-size: 18px;
+                padding-top: .7em;
+            }
+        }
+    }
+}
+
+
+
+ol, ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.ol,
+.ul {
+  li {
+    display: table;
+
+    + li {
+//      // margin-top: ($vertical-rhythm / 2);
+    }
+
+    &:before {
+            counter-increment:li;
+
+      display: table-cell;
+      box-sizing: border-box;
+      padding-right: .5em;
+    }
+  }
+}
+.ol {
+  counter-reset: li;
+
+    li {
+        display: table;
+        //padding-left: 1.75em;
+
+        &:before {
+            content:counter(li) + ".";
+
+      font-size: .875em;
+
+      /*
+            position: absolute;
+            top: 0;
+            right: 100%;
+
+            margin-right: -1em;
+
+            text-align: right;
+      */
+
+        }
+    }
+}
+.ul {
+  li {
+        position: relative;
+        &:before {
+            content: "\25AA"; /* Decimal HTML Entity for small closed square */
+
+      font-size: 1.125em;
+        }
+    }
+}
+.ul--condensed,
+.ol--condensed {
+    li + li {
+        margin-top: .25em;
+    }
+}
+
+dl {
+  // Has just been copied from iOS app. Likely won't match what we want yet.
+    margin-top: 0;
+
+    line-height: 1.2;
+
+    dt {
+        margin: 1em 0 .25em 0;
+        padding: 0;
+        font-weight: bold;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    dd {
+        margin: 0 0 1.5em 0;
+        padding: 0;
+    }
+}
+
+.list--unstyled {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    margin: 0;
+    padding: 0;
+
+    &:before {
+      content: "";
+      position: static;
+      display: inline;
+      width: auto;
+            margin: 0;
+            padding: 0;
+
+            font-size: 0;
+    }
+  }
+}
+
+.list--inline {
+    li {
+        display: inline;
+
+        &:before {
+            width:0;
+        }
+    }
+}
+
+.pinstripe-number--solid {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    width: 1.75em;
+    height: 1.75em;
+
+    text-align: center;
+
+    font-family: $sans-serif;
+    line-height: 1.75;
+    text-align: center;
+    color: $white;
+
+    border-radius: 50%;
+
+    .sapphire & { background: $sapphire; }
+    .ruby & { background: $ruby; }
+    .emerald & { background: $emerald; }
+}
+.pinstripe-number--inline {
+    display: inline-block;
+    // line-height: inherit;
+    // height: inherit;
+    // padding-top: .5%;
+}
+.pinstripe-number--large {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+.list--circles,
+ol.list--circles,
+ul.list--circles {
+  li{
+    display: block;
+    position: relative;
+
+    + li {
+     // // margin-top: ($vertical-rhythm / 2);
+    }
+    padding-left: 1.75em;
+
+        &:before {
+            content:counter(li);
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        font-size: .75em;
+
+
+
+            .sapphire & { background: $sapphire; }
+        .ruby & { background: $ruby; }
+        .emerald & { background: $emerald; }
+        }
+  }
+    // for items that need the circle formatting but arn't part of a list ol or ul
+    .list--circles__item {
+
+
+
+        .sapphire & { background: $sapphire; }
+        .ruby & { background: $ruby; }
+        .emerald & { background: $emerald; }
+
+        &.list--circles__item__table-spacing {
+            margin: .65em auto;
+        }
+    }
+}
+
+.list--circles--expanded,
+ol.list--circles--expanded,
+ul.list--circles--expanded {
+    li {
+        margin-top: -1em;
+
+        &:before {
+            top: 50%;
+            margin-top: -.65em;
+        }
+    }
+}
+
+p.text--upper {
+    text-transform: uppercase;
+}
+
+
+.disclaimer {
+    margin-top: 36px;
+    margin-bottom: 0;
+
+    .disclaimer--message {
+        font-size: 15px;
+        color: 777777;
+        font-weight: normal;
+        padding: 0;
+        margin: 0 0 13px 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+
+
+p {
+  font-family:$brand-font-secondary;
+  color: $brand-color-dark;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+
+p.lead {
+  font-family:$brand-font-secondary;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 100;
+  line-height: 1.2;
+  color: gray;
+}

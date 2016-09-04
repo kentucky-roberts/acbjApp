@@ -1,0 +1,191 @@
+// BOOTSTRAP STYLES
+//
+// Utility classes
+// --------------------------------------------------
+
+
+// Floats
+// -------------------------
+
+.clearfix {
+  @clearfix;
+}
+.center-block {
+  @center-block;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  @text-hide;
+}
+
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.hidden {
+  display: none !important;
+}
+
+
+// For Affix plugin
+// -------------------------
+
+.affix {
+  position: fixed;
+}
+
+
+
+
+// BIZJ STYLES
+// float utility classes
+.pull-left, .u-float-left { float: left; }
+.pull-right, .u-float-right { float: right; }
+
+
+.clear, .u-float-clear { clear: both; }
+
+// Fix float clearing wonkiness related to Block Formatting Context
+// Learn more at http://www.sitepoint.com/understanding-block-formatting-contexts-in-css/
+.u-bfc-fix {
+    overflow: hidden;
+}
+.overflow-visible {
+  overflow: visible !important; // Needed for hotfix, will update later
+}
+// END float utility classes
+
+// position utility classes
+.relative, .u-position-relative { position: relative; }
+.u-position-absolute { position: absolute; }
+.u-position-fixed { position: fixed; }
+
+.top, .u-position-top { top: 0; }
+.right, .u-position-right { right: 0; }
+.bottom, .u-position-bottom { bottom: 0; }
+.left, .u-position-left { left: 0; }
+// END position utility classes
+
+// block level spacing - vertical rhythm/margin
+.u-spacing--top { margin-top: 1em; }
+.u-spacing--bottom { margin-bottom: 1em; }
+.u-vertical-rhythm { margin-bottom: 2px; }
+
+
+.img--block {
+    display: block;
+    width: 100%;
+}
+/*
+Might like for these to be
+.js .js__hidden
+.no-js .no-js__hidden
+but for right now will keep consistency
+with other hidden/visible utility class name patterns
+*/
+.js .hidden--js {
+    display: none;
+}
+.no-js .hidden--no-js {
+    display: none !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+// Fade copied from Bootstrap 3
+.js .fade {
+  opacity: 0;
+  //.transition(opacity .15s ease-out);
+  //&.in {
+   // opacity: 1;
+ // }
+}
+
+.display-none {
+    display: none !important;
+}
+//.screen-reader-only { .hidden-text(); }
+
+.no-focus,
+.no-focus:active,
+.no-focus:focus {
+    outline: none;
+}
+
+.serif {
+    font-family: $serif;
+}
+.sans-serif {
+    font-family: $sans-serif;
+}
+.centered.centered {
+    text-align: center;
+}
+.u-link-color.u-link-color.u-link-color {
+    .ruby & { color: $link-color-ruby; }
+    .sapphire & { color: $link-color-sapphire; }
+    .emerald & { color: $link-color-emerald; }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+/*------------------------------------*
+    $RESPONSIVE VISIBILITY CLASSES
+
+    (Ripped from Bootstrap)
+    Screen size-related
+    Each visible/hidden class applies only for that exact size, not that size and greater.
+    Really really really try to AVOID using the .visible classes
+    Since the 'hidden' classes now apply at xx-only, we shouldn't need to use these as overrides anymore.
+
+    TODO: Think through swapping syntax from hidden--xx to xx-only__hidden ?
+\*------------------------------------*/
+/*
+.generate-responsive-visibility($size-name) {
+    .viewport--${size-name}-only {
+        .hidden--${size-name} { .responsive-invisibility(); }
+
+        .visible--${size-name}--inline { display: inline !important; }
+        .visible--${size-name}--block { display: block !important; }
+        .visible--${size-name}--inline-block { display: inline-block !important; }
+    }
+}
+*/
+/*
+.generate-responsive-visibility(xs);
+.generate-responsive-visibility(sm);
+.generate-responsive-visibility(md);
+.generate-responsive-visibility(lg);
+.generate-responsive-visibility(xl);
+*/
+/*------------------------------------*
+    $RESPONSIVE PRINT CLASSES
+
+    TODO:
+        Replace these with a hidden screen class to hide things that don't print.
+        Then we won't need to set explicit display properties to unhide the print-only pieces.
+\*------------------------------------*/

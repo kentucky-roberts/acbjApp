@@ -1,0 +1,78 @@
+/*------------------------------------*
+    $GRAPHIK
+    So, where's the italic?
+\*------------------------------------*/
+@font-face {
+    font-family: 'Graphik Web';
+    src: url('../fonts/Graphik/Graphik%20Web-Regular.eot');
+    src: url('../fonts/Graphik/Graphik%20Web-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Graphik/Graphik%20Web-Regular.woff2') format('woff2'),
+         url('../fonts/Graphik/Graphik%20Web-Regular.woff') format('woff'),
+         url('../fonts/Graphik/Graphik%20Web-Regular.ttf') format('truetype'),
+         url('../fonts/Graphik/Graphik%20Web-Regular.svg#Graphik%20Web') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+@font-face {
+    font-family: 'Graphik Web';
+    src: url('../fonts/Graphik/Graphik%20Web-Semibold.eot');
+    src: url('../fonts/Graphik/Graphik%20Web-Semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Graphik/Graphik%20Web-Semibold.woff2') format('woff2'),
+         url('../fonts/Graphik/Graphik%20Web-Semibold.woff') format('woff'),
+         url('../fonts/Graphik/Graphik%20Web-Semibold.ttf') format('truetype'),
+         url('../fonts/Graphik/Graphik%20Web-Semibold.svg#Graphik%20Web') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+
+@font-face {
+    font-family: 'Acta';
+    font-weight: normal;
+    src: url('../fonts/Acta/acta-book-webfont.eot');
+    src: url('../fonts/Acta/acta-book-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/Acta/acta-book-webfont.woff') format('woff'),
+             url('../fonts/Acta/acta-book-webfont.ttf') format('truetype'),
+             url('../fonts/Acta/acta-book-webfont.svg#actabook') format('svg');
+}
+@font-face {
+    font-family: 'Acta';
+    font-weight: normal;
+    font-style: italic;
+    src: url('../fonts/Acta/acta-bookitalic-webfont.eot');
+    src: url('../fonts/Acta/acta-bookitalic-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/Acta/acta-bookitalic-webfont.woff') format('woff'),
+             url('../fonts/Acta/acta-bookitalic-webfont.ttf') format('truetype'),
+             url('../fonts/Acta/acta-bookitalic-webfont.svg#actabook') format('svg');
+}
+@font-face {
+    font-family: 'Acta';
+    font-weight: bold;
+    src: url('../fonts/Acta/acta-bold-webfont.eot');
+    src: url('../fonts/Acta/acta-bold-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/Acta/acta-bold-webfont.woff') format('woff'),
+             url('../fonts/Acta/acta-bold-webfont.ttf') format('truetype'),
+             url('../fonts/Acta/acta-bold-webfont.svg#actabook') format('svg');
+}
+@font-face {
+    font-family: 'Acta';
+    font-weight: bold;
+    font-style: italic;
+    src: url('../fonts/Acta/acta-bolditalic-webfont.eot');
+    src: url('../fonts/Acta/acta-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/Acta/acta-bolditalic-webfont.woff') format('woff'),
+             url('../fonts/Acta/acta-bolditalic-webfont.ttf') format('truetype'),
+             url('../fonts/Acta/acta-bolditalic-webfont.svg#actabook') format('svg');
+}
+@font-face {
+    font-family: 'Acta';
+    font-weight: 800;
+    font-style: italic;
+    src: url('../fonts/Acta/acta-bolditalic-webfont.eot');
+    src: url('../fonts/Acta/acta-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/Acta/acta-bolditalic-webfont.woff') format('woff'),
+             url('../fonts/Acta/acta-bolditalic-webfont.ttf') format('truetype'),
+             url('../fonts/Acta/acta-bolditalic-webfont.svg#actabook') format('svg');
+}

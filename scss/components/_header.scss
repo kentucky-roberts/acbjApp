@@ -1,0 +1,65 @@
+/*------------------------------------*
+    $HEADER
+\*------------------------------------*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: @z-header;
+
+    height: @header-height--mobile;
+
+    background: @header-background-color;
+
+    .box-shadow(@header-shadow);
+
+    // .viewport--xs-only &,
+    // .viewport--sm-only & {
+    //     // On desktop, skyboxes have a shadow so no need for one on header.
+    //     // TODO: Should the shadow just always be on the header, not skyboxes?
+    //     .box-shadow(@header-shadow);
+    // }
+
+    .viewport--md & {
+        height: @header-height;
+    }
+
+    .transition-transform(150ms @easeOutFull);
+}
+// this just seems strange to have to setup this way
+.header--has-skyboxes {
+    height: @header-height__skyboxes;
+
+    .viewport--xs &,
+    .viewport--sm & {
+        height: @header-height--mobile;
+
+        .market-header {
+            height: @header-height--mobile;
+        }
+    }
+
+    .viewport--md & {
+        height: @header-height__skyboxes;
+
+        .market-header {
+            height: @header-height__skyboxes;
+        }
+    }
+}
+.market-header {
+    position: relative;
+
+    height: @header-height--mobile;
+
+    border-top: @header-top-border-color solid @header-top-border-width--mobile;
+
+    .viewport--md & {
+        height: @header-height;
+    }
+}
+
+
+
+

@@ -1,0 +1,257 @@
+/*------------------------------------*
+    $SECTION-HEADER
+
+    Can have Image logo override the text logo. IE: The List
+    Can have up to 3 sponsor logos along with the title of the section
+\*------------------------------------*/
+
+$logo-width-min: 100px;
+$logo-width-max: 300px;
+$logo-height-min: 50px;
+$logo-height-max: 150px;
+
+
+$logo-the-list-width-min: 150px;
+$logo-the-list-width-max: 300px;
+$logo-the-list-height-min: 20px;
+$logo-the-list-height-max: 40px;
+
+
+$sponsored-by__logo-width-min: 88px;
+$sponsored-by__logo-height-min: 31px;
+
+$sponsored-by__logo-width-max: 120px;
+$sponsored-by__logo-height-max: 60px;
+
+$sponsored-by__logo-gutter: 12px;
+$sponsored-by__logo-gutter-half: ($sponsored-by__logo-gutter / 2);
+
+$sponsored-by__label-approx-width: 100px;
+
+$has-1-sponsor-logo__off-limits-width: ($sponsored-by__logo-width-max + $sponsored-by__logo-gutter + $sponsored-by__label-approx-width);
+$has-2-sponsor-logos__off-limits-width: ($has-1-sponsor-logo__off-limits-width + $sponsored-by__logo-width-max + $sponsored-by__logo-gutter-half);
+$has-3-sponsor-logos__off-limits-width: ($has-2-sponsor-logos__off-limits-width + $sponsored-by__logo-width-max + $sponsored-by__logo-gutter-half);
+
+.site-section-header {
+    margin: 0;
+    text-align: left;
+    border: lightgray solid 1px;
+    border-right: none;
+    border-left: none;
+}
+
+.site-section-header--left-aligned {
+    text-align: left;
+}
+
+.site-section-header--v2 {
+    background-size: 9px 9px;
+
+    .viewport--lg & {
+        text-align: left;
+    }
+    .viewport--lg &.has-1-sponsor-logo .site-section-header__container,
+    .viewport--lg &.has-1-sponsor-logos .site-section-header__container{
+        padding-left: 0;
+    }
+}
+
+.site-section-header__container {
+    position: relative;
+    padding-top: .75em;
+    padding-bottom: .5em;
+
+    .viewport--md & {
+        padding-top: 1.618em;
+        padding-bottom: 1em;
+    }
+
+}
+
+.site-section-header__title.site-section-header__title {
+    margin: 0;
+    padding: 0;
+
+    font-family: $sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 1;
+
+    .viewport--lg .site-section-header--v2 &.site-section-header__title--page-title {
+        font-size: 36px;
+    }
+    /*
+    .viewport--md-only & {
+        padding-right: 240px; // Make room for sponsor logo
+    }
+    */
+
+    .title-as-logo { display: none; }
+
+    .has-header-title-logo & {
+        .title-as-text { display: none; } // removes text title instance
+        .title-as-logo {
+            position: relative;
+            display: block;
+            margin: 0 auto;
+
+            width: $logo-width-min;
+            height: $logo-height-min;
+
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: contain;
+
+            .sapphire & {
+                background-image: url('../../www/img/logos/list-logo-sapphire.png');
+            }
+            .ruby & {
+                background-image: url('../../www/img/logos/list-logo-ruby.png');
+            }
+            .emerald & {
+                background-image: url('../../www/img/logos/list-logo-emerald.png');
+            }
+
+
+        }
+
+        .viewport--sm & {
+            .title-as-logo {
+                width: $logo-width-max;
+                height: $logo-height-max;
+/*
+                // .sapphire & {
+                //     background-image: url(~'../img/the-list-logo-sapphire.svg');
+                // }
+                // .ruby & {
+                //     background-color: orange;
+                //     background-image: url(~'../img/the-list-logo-ruby.svg');
+                // }
+                // .emerald & {
+                //     background-image: url(~'../img/the-list-logo-emerald.svg');
+                // }
+*/
+                &.the-list-logo {
+                    width: $logo-the-list-width-max;
+                    height: $logo-the-list-height-max;
+                }
+            }
+        }
+    }
+}
+
+.site-section-header__links {
+    margin-bottom:0;
+    font-size:13px;
+
+    li {
+        margin-right: 0;
+        margin-left: .7em;
+
+        &:first-child { margin-left: 0; }
+
+        &:before {
+            display: inline-block;
+            padding-right: 1em;
+            color: $gray-light;
+        }
+        &:first-child:before {
+            content: "";
+            width: 0;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .viewport--xs-only &,
+    .viewport--sm-only & {
+        display: none;
+    }
+}
+
+.sponsored-by {
+    font-size: 0; // For inline-block spacing
+}
+.sponsored-by__label {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: .5em;
+
+    font-family: $sans-serif;
+    font-size: 10px;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    color: $gray-light;
+}
+.sponsored-by__logo {
+    display: inline-block;
+    min-width: $sponsored-by__logo-width-min;
+    min-height: $sponsored-by__logo-height-min;
+
+    margin-right: $sponsored-by__logo-gutter-half;
+    margin-left: $sponsored-by__logo-gutter-half;
+}
+
+.sponsored-by--right {
+    position: absolute;
+    display: table-row;
+    top: 50%;
+    right: 0;
+   // .translate(0, -50%);
+    min-height: $sponsored-by__logo-height-min;
+
+    .sponsored-by__label {
+        display: table-cell;
+        vertical-align: middle;
+        height: $sponsored-by__logo-height-max;
+        padding-right: .5em;
+
+        text-align: right;
+    }
+    .sponsored-by__logo {
+        display: table-cell;
+        vertical-align: middle;
+        height: $sponsored-by__logo-height-max;
+        margin: 0;
+        padding-left: $sponsored-by__logo-gutter;
+        //.box-sizing(content-box);
+    }
+}
+.viewport--md-only {
+    .has-1-sponsor-logo {
+        .site-section-header__title {
+//            text-align: left;
+        }
+        //.sponsored-by {
+        //    &:extend(.sponsored-by--right all);
+       // }
+    }
+}
+.viewport--lg-only {
+    .has-1-sponsor-logo,
+    .has-2-sponsor-logos,
+    .has-3-sponsor-logos {
+        .sponsored-by {
+        //    &:extend(.sponsored-by--right all);
+        }
+    }
+    .has-2-sponsor-logos,
+    .has-3-sponsor-logos {
+        .site-section-header__title {
+//            text-align: left;
+        }
+    }
+}
+
+.viewport--xl-only {
+//    .has-1-sponsor-logo,
+//    .has-2-sponsor-logos,
+//    .has-3-sponsor-logos {
+        .sponsored-by {
+          //  &:extend(.sponsored-by--right all);
+        }
+//    }
+}

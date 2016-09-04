@@ -1,0 +1,320 @@
+
+/*
+Are .navbar and .nav being used anywhere in the responsive site?
+*/
+.navbar {
+    position: relative;
+
+}
+.nav {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+
+    li {
+        float: left;
+        vertical-align: top;
+        margin: 0;
+        padding: 0;
+
+        .nav-item,
+        a.nav-item {
+            display: block;
+            margin:0;
+            padding: 0 1em;
+
+            color: $gray-dark;
+
+
+            &:hover {
+                text-decoration: none;
+
+            }
+
+        }
+    }
+}
+.nav--vertical li {
+    float: none;
+}
+/*
+.navbar--global {
+    background: $navbar--global__background-color;
+    z-index: 30;
+
+    .nav {
+        overflow: visible;
+        position: relative;
+    }
+
+    .nav li {
+        .font-size(12px);
+        .line-height($navbar--global__height);
+
+        a {
+            color: $navbar--global__link-color;
+
+            &:hover {
+                color: $navbar--global__link-color--hover;
+                background: $gray--darkest;
+            }
+        }
+
+        &.nav__selector {
+            background: $gray--darkest;
+
+            .dropdown__trigger {
+                .transition(none);
+
+
+                &:hover {
+                    .transition(none);
+
+                    span {
+                        border-top-color: #fff;
+                    }
+                }
+            }
+
+            &.dropdown--open > .dropdown__trigger {
+                background: $gray__bg;
+                color: $gray--dark;
+                .transition(none);
+
+                .dropdown__trigger:hover {
+                    background: inherit;
+                    color: inherit;
+                    .transition(none);
+                }
+
+                span {
+                    border-top-color: $gray--dark;
+                }
+            }
+
+            > ul {
+                background: $gray__bg;
+                color: $gray--dark;
+                padding: 0;
+
+                li {
+                    display: block;
+                    float: none;
+                    width: 200px;
+
+                    a {
+                        display: block;
+                        color: inherit;
+                        font-weight: 900;
+
+                        &:hover {
+                            background: #fff;
+                        }
+                    }
+                }
+
+                &#navbar--global__market-selector {
+                    height: 34em;
+                    overflow-y: scroll;
+
+                    -webkit-overflow-scrolling: touch;
+                }
+
+                &#navbar--global__account-selector {
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+*/
+/*
+.navbar--market {
+
+    //#gradient > .vertical(#e9e9e9, #ccc);
+    background: #e9e9e9;
+    #gradient > .vertical($gray__bg--light,darken($gray__bg,5%));
+
+    .nav > li {
+        .font-size(14px);
+        font-weight: bold;
+
+        text-shadow: $text-shadow--inset;
+
+        > a {
+            .line-height($navbar--market__height);
+            background: rgba(255,255,255,0);
+
+            &.icon-alone {
+                //line-height: 2.666em;
+            }
+
+            &:hover {
+                background: rgba(255,255,255,1);
+            }
+        }
+
+        &.divider-right {
+            border-right: #bbb solid 1px;
+        }
+        &.divider-left {
+            border-left: #bbb solid 1px;
+        }
+    }
+}
+*/
+
+
+
+
+/*------------------------------------*
+    $SUBNAV
+
+    First pass at just showing the 'home' subnav by default
+    This will change a ton with actual superfish integration
+\*------------------------------------*/
+/*
+.subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    z-index: 100; // added to help display over sponsored-by__tab position absolute blocks
+}
+.subnav--active {
+    display: block;
+}
+
+.navbar--market {
+    //margin-bottom: $navbar--market__height; // Temporarily make room for the subnav
+
+    .subnav {
+        width: 100%;
+
+        font-weight: normal;
+        .font-size(12px);
+        .line-height($navbar--market__height);
+
+        border-bottom: $border-color--lighter solid 1px;
+        background: #fff;
+
+        li {
+
+            a {
+                color: $gray--light;
+
+                &:hover {
+                    color: $gray;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .nav-item--active, .nav-item--breadcrumb {
+        background: $white;
+    }
+}
+.subnav--vertical {
+    li {
+        float: none;
+
+        a {
+
+        }
+    }
+}
+*/
+/*
+    .page-nav is for links to anchors on the existing page.
+*/
+.page-nav {
+    display: table;
+    margin: 0;
+    padding: 0;
+
+    height:42px;
+    font-size: 13px;
+
+    .viewport--md & {
+        height:48px;
+        font-size: 15px;
+    }
+}
+.page-nav__item {
+    display: table-cell;
+    width: auto;
+    vertical-align: middle;
+}
+.page-nav__item__link {
+    padding: 8px;
+    margin-right: 8px;
+
+    border-radius: 2px;
+}
+.page-nav--inverse {
+    .page-nav__item {
+        color: fade($white, 90%);
+    }
+    .page-nav__item__link {
+        color: fade($white, 90%);
+        text-shadow: fade($black, 15%) 0 1px 2px;
+
+        &:hover {
+            color: $white;
+            text-decoration: none;
+            background: fade($white, 10%);
+        }
+    }
+}
+
+.page-nav__item__link--btn,
+.page-nav--inverse .page-nav__item__link--btn {
+    .ruby & {
+        background: $ruby;
+
+        &:hover {
+            background: lighten($ruby, 5%);
+        }
+    }
+    .sapphire & {
+        background: $sapphire;
+
+        &:hover {
+            background: lighten($sapphire, 5%);
+        }
+    }
+    .emerald & {
+        background: $emerald;
+
+        &:hover {
+            background: lighten($emerald, 5%);
+        }
+    }
+}
+
+/* Paddle for POTM */
+.paddle__icon {
+    position: absolute;
+    height: 100%;
+    background-color: $gray-lightest;
+    vertical-align: middle;
+    text-align: center;
+    right: 0;
+}
+.paddle:hover .paddle__icon {
+    background-color: $gray-lighter;
+}
+.paddle__icon .icon-container {
+    position: relative;
+    height: 100%;
+}
+.paddle__icon .icon {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+    font-size: 1.3em;
+}
